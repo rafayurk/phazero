@@ -1,0 +1,208 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Home</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS: -->
+    <link href="css/custom.css" rel="stylesheet">
+
+
+</head>
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+		<!-- Logo and responsive toggle -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="index.html">
+				
+				<img src="images/HSE.jpg" height="36" width="80">
+			</a>
+		</div>
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="navbar">
+			<ul class="nav navbar-nav navbar-right">
+				<li class="active">
+					<a href="index.php">Home</a>
+				</li>
+				<li>
+					<a href="view_admins.php">Admins</a>
+				</li>
+
+				<li>
+					<a href="#">My Checklists</a>
+				</li>
+				<li>
+					<a href="view_users.php">Inspectors</a>
+				</li>
+				<li>
+					<a href="#">Log Out</a>
+				</li>
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container -->
+</nav>
+
+<body>
+
+   
+	<!-- Feature -->
+	<div class="jumbotron feature">
+		<div class="container">
+			<h1><span class="hse.jpg"></span>HSE Admin Portal</h1>
+			<p>Developed by Phaze.Ro</p>
+		</div>
+	</div>
+
+
+    <!-- Heading -->
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <h1 class="text-center">Manage All Administrative Functions</h1>
+                <p class="lead text-center">Create and monitor admins, checklists and inspectors.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Promos -->
+	<div class="container-fluid">
+        <div class="row promo">
+        	<a href="#">
+				<div class="col-md-4 promo-item item-1">
+					<h3>
+						Admins
+					</h3>
+					<img src="images/admin.png" height="100" width="100">
+				</div>
+            </a>
+            <a href="#">
+				<div class="col-md-4 promo-item item-2">
+					<h3>
+						Checklists
+					</h3>
+					<img src="images/checklists.png" height="100" width="100">
+				</div>
+            </a>
+			
+			<a href="#">
+				<div class="col-md-4 promo-item item-3">
+					<h3>
+						Inspectors
+					</h3>
+					<img src="images/inspector.png" height="100" width="100">
+				</div>
+            </a>
+        </div>
+    </div><!-- /.container-fluid -->
+
+
+	<!-- Footer -->
+	<footer>
+	
+		
+		
+        <!-- Copyright etc -->
+        <div class="small-print">
+        	<div class="container">
+        		<!-- <p><a href="#">Terms &amp; Conditions</a> | <a href="#">Privacy Policy</a> | <a href="#">Contact</a></p> -->
+        		<p>Copyright &copy; Phaze.Ro 2021 </p>
+        	</div>
+        </div>
+        
+	</footer>
+
+	
+    <!-- jQuery -->
+    <script src="js/jquery-1.11.3.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+	
+	<!-- IE10 viewport bug workaround -->
+	<script src="js/ie10-viewport-bug-workaround.js"></script>
+	
+</body>
+
+</html>
+
+<?php
+// session_start();
+include('authentication.php');
+include('includes/header.php');
+
+?>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+
+
+                <?php
+                if(isset($_SESSION['status']))
+                {
+                    echo "<h5 class='alert alert-success'>".$_SESSION['status']."</h5>";
+                    unset($_SESSION['status']);
+                }
+
+                
+                
+                ?>
+
+             
+                <style>
+                .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                /* width: 50%; */
+                width: 100%;
+                height: 110%;
+                opacity: 0.8;
+                }
+                </style>
+                <img src="phazero.png" alt="Logo" class="center">
+
+                <!-- <br> 
+                <p class="w3-center">The admin portal is created by Nihad, Rafay, Premices and Mohammed.</p> -->
+<!-- 
+                <div class="card">
+                    <div class="card-header">
+                        <h4>
+                        <a href="view_checklists.php" >Checklists</a>   
+                        </h4>
+                    </div>
+                    
+                    <div class="card">
+                    <div class="card-header">
+                        <h4>
+                        <a href="view_admins.php"> Admins</a>
+                        </h4>
+                    </div>
+                    <div class="card">
+                    <div class="card-header">
+                        <h4>
+                        <a href="view_users.php">Inspectors</a>
+                        </h4>
+                    </div>
+                
+                </div>
+            </div>
+        </div>
+    </div> -->
+  
+<?php
+include('includes/footer.php');
+?>
